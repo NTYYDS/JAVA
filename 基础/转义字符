@@ -1,0 +1,17 @@
+package text;
+
+public class Text 
+{
+	public static void main(String[] arg) 
+	{
+		// \t: 一个制表位，实现对齐功能
+		System.out.println("hello\twolrd"); //hello	wolrd
+		// \n： 换行
+		System.out.println("hello\nwolrd"); //hello
+		                                    //wolrd
+		// \\： 输出一个\
+		System.out.println("C:\\Program Files (x86)\\Windows Defender\\fr-FR");//C:\Program Files (x86)\Windows Defender\fr-FR
+		// \": 输出一个"
+		System.out.println("\"hellowolrd\"");//"hellowolrd"
+	}
+}

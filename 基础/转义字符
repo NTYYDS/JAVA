@@ -13,5 +13,6 @@ public class Text
 		System.out.println("C:\\Program Files (x86)\\Windows Defender\\fr-FR");//C:\Program Files (x86)\Windows Defender\fr-FR
 		// \": 输出一个"
 		System.out.println("\"hellowolrd\"");//"hellowolrd"
+		System.out.println("hello\0wolrd");//hello world
 	}
 }

@@ -13,9 +13,5 @@ public class Text
 		System.out.println("C:\\Program Files (x86)\\Windows Defender\\fr-FR");//C:\Program Files (x86)\Windows Defender\fr-FR
 		// \": 输出一个"
 		System.out.println("\"hellowolrd\"");//"hellowolrd"
-		// \r：将/r后面的字符替换\r前的字符
-		System.out.print("hello\rwolrd\n");//world 注意 这边输出用的print 
-		System.out.print("hello\rwolrd");//hello
-		                                 //world  注意 这边输出用的println 
 	}
 }

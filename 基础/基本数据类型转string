@@ -1,0 +1,35 @@
+/**
+ * @author hongyi
+ * @version 1.0
+ */
+
+
+package text;
+
+
+public class Text 
+{ 
+	 public static void main(String[] args)
+	    {
+		 int a = 123;
+		 float b = 11.11F;
+		 double c = 3.142124;
+		 System.out.println(getType(a));
+		 System.out.println(getType(b));
+		 System.out.println(getType(c));
+		 String str1 = a + "";
+		 String str2 = b + "";
+		 String str3 = c + "";
+		 System.out.println(str1);
+		 System.out.println(str2);
+		 System.out.println(str3);
+		 System.out.println(getType(str1));
+		 System.out.println(getType(str2));
+		 System.out.println(getType(str3));
+	    }
+
+
+	 public static String getType(Object i) {	
+	 	return i.getClass().toString();
+	 }
+}

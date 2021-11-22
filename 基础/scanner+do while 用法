@@ -1,0 +1,24 @@
+/**
+ * @author hongyi
+ * @version 1.0
+ */
+
+
+package text;
+
+import java.util.Scanner;
+
+public class Text 
+{ 
+	 public static void main(String[] args)
+	    {			 
+		 Scanner sc = new Scanner(System.in);
+		 char answer = ' ';
+		 do {			 
+			 System.out.println("還錢嗎");
+			 System.out.println("y/n");
+			 answer = sc.next().charAt(0);
+		 }while(answer != 'y');
+		 System.out.println("打錢");
+	    }
+}

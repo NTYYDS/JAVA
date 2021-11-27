@@ -1,0 +1,26 @@
+/**
+ * @author hongyi
+ * @version 1.0
+ */
+
+
+package text;
+
+
+public class Text 
+{ 
+	public static void main(String[] args){
+		int count = 0;
+		int num = 0;
+		for(;;num++) {
+			//产生1-100的随机值
+			int n = (int)(Math.random()*100+1);
+			System.out.println(+n);
+			count++;
+			if (n == 97) {
+				break;
+			}
+		}
+		System.out.println("次数是：" +count);
+	}
+}

@@ -1,0 +1,24 @@
+/**
+ * @author hongyi
+ * @version 1.0
+ */
+
+
+package text;
+
+public class Text 
+{ 
+	public static void main(String[] args) {
+		int[] arr = {1, 2, 3};
+		for(int i = 0; i < arr.length; i++)
+		System.out.print(arr[i] + " ");
+		System.out.print("\n");
+		int[] arr1 = arr;//相等的是地址
+		arr1[0] = 33;//将arr1中的元素替换，将会同时把arr[0]也替换
+		for(int i = 0; i < arr.length; i++)
+		System.out.print(arr[i] + " ");	
+		System.out.print("\n");
+		for(int i = 0; i < arr.length; i++)
+		System.out.print(arr1[i] + " ");
+	}	
+}

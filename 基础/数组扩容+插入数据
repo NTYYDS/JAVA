@@ -1,0 +1,39 @@
+/**
+ * @author hongyi
+ * @version 1.0
+ */
+
+
+package text;
+
+import java.util.Scanner;
+
+public class Text 
+{ 
+	public static void main(String[] args) {
+		int[] a = {10, 12, 45, 90};
+		int[] b = new int[a.length + 1];
+		Scanner sc = new Scanner(System.in);
+		System.out.println("请输入插入位置(第 位)");
+		int count = sc.nextInt() - 1;//数组下标是从0开始
+		int num = 111;
+		//将数据填入第N位
+		b[count] = num;
+		for(int i = 0; i < b.length; i++) {//遍历b数组
+			//填入a数组中的数据
+				if(i < count) {
+					b[i] = a[i];
+				}		
+				else if(i > count) {
+					for(i = count; i < a.length; i++) {
+						b[i+1] = a[i];
+					}
+				}
+		}
+		//将b的地址传给a数组，销毁原a
+		a = b;
+		for(int k = 0; k < b.length ; k++) {
+			System.out.print(a[k]+" ");
+		}
+	}	
+}

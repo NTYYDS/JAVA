@@ -1,0 +1,43 @@
+/**
+ * @author hongyi
+ * @version 1.0
+ */
+
+
+package text;
+
+import java.util.Scanner;
+
+public class Text 
+{ 
+	public static void main(String[] args) {
+		AA a = new AA();
+		Scanner sc = new Scanner(System.in);
+		System.out.println("请输入随机值个数");
+		int n = sc.nextInt();
+		int[] num = a.getnum(n);//调用AA类中函数getnum，并接收随机值
+		double sum = a.moyen(num);//调用AA类中函数moyen，返回平均值
+		System.out.println(sum);
+	}	
+}	
+
+class AA{
+	public int[] getnum(int n){
+		//当需要返回多个值时，通过数组的方式来返回
+		int[] arr = new int[n];
+		for(int i = 0; i < n; i++) {
+			//生成1-100随机数,并将随机值存入数组
+			arr[i] = (int)(Math.random()*100 + 1);
+		}
+		return arr;
+	}	
+	public double moyen(int[] arr) {
+		//对数组进行求和,并求平均值
+		double sum = 0;
+		for(int n = 0; n < arr.length; n++) {
+			sum += arr[n];
+		}		
+		double moyen = sum / arr.length;
+		return moyen;		
+	}
+}

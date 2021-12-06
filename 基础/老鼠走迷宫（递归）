@@ -1,0 +1,83 @@
+/**
+ * @author hongyi
+ * @version 1.0
+ */
+
+
+package text;
+
+public class Text 
+{ 
+	public static void main(String[] args) {
+		map a = new map();
+		int[][] map = a.map1();
+		findway way = new findway();
+		way.find(map, 1, 1);
+		for(int i = 0; i < 8; i++) {
+			for(int j = 0; j < 9; j++) {
+				System.out.print(map[i][j]);
+			}
+			System.out.println();
+		}
+	}	
+}	
+
+class map{
+	
+	public int[][] map1(){//设计迷宫地图 将障碍物全部为1 可行走部分为0	
+		int[][] map1 = new int[8][9];
+		for(int i = 0; i < 8; i++) {
+			for(int j = 0; j < 9; j++) {
+				map1[0][j] = 1;
+				map1[7][j] = 1;
+				map1[2][j] = 1;
+			}
+		}
+		for(int i = 0; i < 8; i++) {
+			for(int j = 0; j < 9; j++) {
+				map1[i][0] = 1;
+				map1[i][8] = 1;
+			}
+		}
+		map1[2][6] = 0;
+		return map1;
+	}
+}
+
+class findway{
+	
+	public boolean find(int[][] map, int n, int m) {//假定走到右下角的地方算走出迷宫 人物起始位置为（n，m）
+		//假定人物方向优先级为 下 右 上 左 
+		//假定可行走为2 可行走但是不通路为3			
+		int[][] mouse = new int[n][m];
+		if(map[6][7] == 2) {//说明已经找到
+			return true;
+		}
+		else {
+			if(map[n][m] == 0) {//说明当前位置0可以走
+				//假定可以走通
+				map[n][m] = 2;
+				if(find(map, n+1, m)) {
+					return true;
+				}
+				else if(find(map, n, m+1)) {
+					return true;
+				}			
+				else if(find(map, n-1, m)) {
+					return true;
+				}
+				else if(find(map, n, m-1)) {
+					return true;
+				}
+				else {
+					mouse[n][m] = 3;
+					return false;
+				}
+
+			}			
+			else {//map[n][m] = 1,2,3
+				return false;
+			}
+		}
+	}
+}	

@@ -1,0 +1,31 @@
+/**
+ * @author hongyi
+ * @version 1.0
+ */
+
+
+package text;
+
+public class Text 
+{ 
+	public static void main(String[] args) {
+		Methods mt = new Methods();
+		mt.m(10);
+		mt.m(10.5);
+		mt.m("看了好久");
+
+	}
+}
+
+class Methods{
+	//重载：方法名字一样，但是传参的参数所用的类型不同
+	public void m(int n){
+		System.out.println("平方=" + n*n);
+	}
+	public void m(double n){
+		System.out.println("加和=" + (n + n));
+	}
+	public void m(String n){
+		System.out.println("传入的字符串：" + n);
+	}
+}	

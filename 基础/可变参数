@@ -1,0 +1,44 @@
+/**
+ * @author hongyi
+ * @version 1.0
+ */
+
+
+package text;
+
+public class Text 
+{ 
+	public static void main(String[] args) {
+		Methods mt = new Methods();
+		int res = mt.m(10,20,30);		
+		System.out.println("相加=" + res);
+		
+		//可变参数可以直接传入数组
+		int[] arr = {1,2,3};
+		int res1 = mt.m(arr);		
+		System.out.println("相加=" + res1);
+		//可变参数和普通参数
+		double res2 = mt.m("ssaddd", 1.1,2.2,3.2);		
+		System.out.println("相加=" + res2);
+	}
+}
+
+class Methods{
+	public int m(int... num){//可以输入(0-n)个int类型参数
+		//可变参数其本质就是一个数组
+		int res = 0;
+		for(int i = 0; i < num.length; i++) {
+			res += num[i];
+		}
+		return res;
+	}
+	//细节：可变参数可以和普通参数放在一起，但是可变参数需要放在末尾
+	public double m(String n, double... nums) {
+		System.out.println("输入内容：" + n);
+		double res = 0;
+		for(int i = 0; i < nums.length; i++) {
+			res += nums[i];
+		}
+		return res;
+	}
+}	

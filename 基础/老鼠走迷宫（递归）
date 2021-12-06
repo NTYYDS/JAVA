@@ -49,7 +49,6 @@ class findway{
 	public boolean find(int[][] map, int n, int m) {//假定走到右下角的地方算走出迷宫 人物起始位置为（n，m）
 		//假定人物方向优先级为 下 右 上 左 
 		//假定可行走为2 可行走但是不通路为3			
-		int[][] mouse = new int[n][m];
 		if(map[6][7] == 2) {//说明已经找到
 			return true;
 		}
@@ -70,7 +69,7 @@ class findway{
 					return true;
 				}
 				else {
-					mouse[n][m] = 3;
+					map[n][m] = 3;
 					return false;
 				}
 

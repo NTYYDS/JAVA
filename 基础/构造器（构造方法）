@@ -1,0 +1,60 @@
+/**
+ * @author hongyi
+ * @version 1.0
+ */
+
+
+package text;
+
+public class Text 
+{ 
+	public static void main(String[] args) {
+		//当我们创建对象时，直接通过构造器指定名字和年龄
+		Person p1 = new Person("Smiyrh", 80); 
+		System.out.println("p1信息如下");
+		System.out.println("age =" + p1.age);
+		System.out.println("name = " + p1.name);
+		Person p2 = new Person("客户");
+		System.out.println("p2信息如下");
+		System.out.println("name = " + p2.name);
+	}
+}
+
+class Person{
+	int age = 10;
+	String name;
+	//构造器
+	//1.1.构造器的修饰符可以默认
+	//2.构造器没有返回值,void也不行
+	//3.方法名Person和类Person名字必须一样
+	//4.(String pName, int pAge)是构造器的参数列表，和成员方法的规则一样
+	//5.构造器的调用，由系统完成对象的初始化
+	//6.一个类可以有多个不同的构造器，即构造器的重载
+	public Person(String pName, int pAge){
+		System.out.println("构造器被调用");
+		name = pName; 
+		age = pAge;
+	}
+	//构造器的重载
+	public Person(String pName){
+		System.out.println("构造器被调用");
+		name = pName; 
+	}
+}	
+
+class Dog{
+	//7.系统默认无参构造器
+	/*
+	 Dog(){
+	  
+	 }
+	*/
+	//8.一旦定义了自己的构造器，默认的构造器就会被覆盖，就不能再使用默认的无参构造器，除非显示的定义，即Dog（）{}
+	public Dog(String dName) {
+		//...
+	}
+	//也就是说 之前默认构造器已经被上面的构造器覆盖，若是仍需要使用无参构造器，则需要自己重新定义一个
+	 Dog(){
+		  
+	 }
+}

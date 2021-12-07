@@ -1,0 +1,46 @@
+/**
+ * @author hongyi
+ * @version 1.0
+ */
+
+
+package text;
+
+public class Text 
+{ 
+	public static void main(String[] args) {
+		Methods aa = new Methods();
+		aa.m();
+		dog mm = new dog();
+		mm.dogy();
+		mm.dogy1(aa);
+	}
+}
+
+class Methods{
+	public int age = 10;
+	
+	public void m(){
+		//局部变量和属性可以重命名，但是在输出的时候遵循就近原则
+		int age = 20;
+		System.out.println("age = " + age);
+	}
+}	
+
+class dog{		
+	//全局变量/属性：可以被本类或者其他类使用
+	//局部变量：只能在自己方法中被使用
+	
+	//方法一：调用其他类
+	public void dogy(){
+
+		Methods b = new Methods();
+		int c = b.age;
+		System.out.println("c 的 age = " + c);
+	}
+	//方法二：直接将类传入
+	public void dogy1(Methods n) {
+		Methods b = new Methods(); 
+		System.out.println("b 的 age = " + b.age);
+	}
+}

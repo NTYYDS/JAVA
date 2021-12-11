@@ -1,0 +1,79 @@
+/**
+ * @author hongyi
+ * @version 1.0
+ */
+
+
+package text;
+
+public class Text 
+{ 
+	public static void main(String[] args) {
+//		Person person = new Person();
+//		person.setName("jackyyyyy");
+//		person.setAge(66);
+//		person.setSalary(0);
+		
+		//如果使用自己的构造的构造器指定属性
+		Person sm = new Person("smith", 20000, 50000000);
+		System.out.println(sm.info());
+	}
+}
+
+class Person{
+	public String name;
+	private int age;
+	private double salary;
+	
+	public Person(){
+	}
+	public Person(String name, int age, double salary) {
+		//这样使用构造器可以直接绕过后面的校验
+		this.name = name;
+		this.age = age;
+		this.salary = salary;
+		//因此可以将set方法写在构造器中，这样仍然可以校验
+//		setName(name);
+//		setAge(age);
+//		setSalary(salary);
+	}
+	
+	//通过使用菜单Source中的Grenerate Getters and Setters 直接生成下列代码
+	public String getName() {
+		return name;
+	}
+	public void setName(String name) {
+		//加入数据校验 字符串在2-6之间
+		if(name.length() >= 2 && name.length() <= 6) {
+			this.name = name;
+		}
+		else {
+			System.out.println("输入名字在2-6之间");
+			this.name = "0";
+		}
+	}
+	public int getAge() {
+		return age;
+	}
+	public void setAge(int age) {
+		//逻辑判断
+		if(age >= 1 && age <= 50) {
+			this.age = age;
+		}
+		else {
+			System.out.println("设置错误，年龄需要在1-50岁");
+		}
+		
+	}
+	public double getSalary() {
+		//可以设计一个权限判断
+		return salary;
+	}
+	public void setSalary(double salary) {
+		this.salary = salary;
+	}
+	//写一个方法，返回属性信息
+	public String info() {
+		return "info: name = " + name + " age = " + age + " salary = " + salary;
+	}
+}

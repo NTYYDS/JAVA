@@ -1,0 +1,79 @@
+package etu;
+
+public class AccountText {
+    public static void main(String[] args){
+        //创建Account
+        Account account = new Account();
+        account.setCode("123485");
+        account.setMoney(572);
+        account.setName("kk");
+        account.showInfo();
+    }
+}
+
+public class Account {
+    private String name;
+    private double money;
+    private String code;
+
+
+    //提供两个构造器
+    public Account(){
+    }
+
+    public Account(String name, double money, String code) {
+        this.setName(name);
+        this.setMoney(money);
+        this.setCode(code);
+    }
+
+    //封装
+    public String getCode() {
+        return code;
+    }
+
+    public void setCode(String code) {
+        if (code.length() == 6){
+            this.code = code;
+        }
+        else{
+            System.out.println("输入错误");
+        }
+        this.code = code;
+    }
+
+    public String getName() {
+        return name;
+    }
+
+    public void setName(String name) {
+        if (name.length() >= 2 && name.length() <=4){
+            this.name = name;
+        }
+        else{
+            System.out.println("请输入2-4位");
+            this.name = "无名";
+        }
+        this.name = name;
+    }
+
+    public double getMoney() {
+        return money;
+    }
+
+    public void setMoney(double money) {
+        if (money > 20){
+            this.money = money;
+        }
+        else{
+            System.out.println("请20以上");
+            this.money = 0;
+        }
+        this.money = money;
+    }
+    //显示账号信息
+    public void showInfo(){
+        //可以添加一个身份校验
+        System.out.println("账号信息： name = " + name + " 余额 = " + money + " code");
+    }
+}

@@ -30,7 +30,7 @@ public class text{
         System.out.println();
         System.out.println("=============================");
         System.out.println("使用比较器后堆排序");
-        PriorityQueue<Integer> heap1 = new PriorityQueue<>(cmp);
+        PriorityQueue<Integer> heap1 = new PriorityQueue<>(new cmp());
         heap1.add(2);//添加元素
         heap1.add(212);
         heap1.add(23);
